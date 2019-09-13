@@ -30,3 +30,13 @@
   align-items: center;
   width: 50vw;
 }
+
+.house-div{
+  background-color: #dedede;
+  width: 50vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}

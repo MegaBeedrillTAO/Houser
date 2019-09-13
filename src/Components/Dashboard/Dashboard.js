@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Dashtop from './Dashtop';
 import House from '../House/House';
+import Axios from 'axios';
 
 class Dashboard extends Component{
     constructor(){
@@ -8,6 +9,13 @@ class Dashboard extends Component{
         this.state = {
             houses: []
         }
+    }
+    componentDidMount(){
+        Axios.get('/api/houses') 
+        .then(response => {
+            this.setState({houses: response.data})
+        })
+        .catch(err => console.log(err));
     }
     render(){
         let houses = this.state.houses.map((el) =>(
