@@ -5,13 +5,28 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header-div{
   width: 100vw;
-  height: 80px;
+  height: 10vh;
   background-color: #519872;
   position: fixed;
   top: 0px;
+}
+.wiz-dash{
+  background-color: #e5f4ec;
+  height: 90vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+
+}
+.dash_top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
 }

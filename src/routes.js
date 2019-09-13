@@ -7,7 +7,7 @@ export default (
    
         
             <Switch>
-                <Route path='/' component={Dashboard}/>
+                <Route exact path='/' component={Dashboard}/>
                 <Route path='/wizard' component={Wizard}/>
             </Switch>
         
