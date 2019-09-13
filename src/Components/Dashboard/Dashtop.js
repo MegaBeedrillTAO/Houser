@@ -4,7 +4,7 @@ function Dashtop(){
     return(
         <div className='dash_top'>
             <h2>Dashboard</h2>
-            <Link to='/wizard'><button>Add New Property</button></Link>
+            <Link to='/wizard/step1'><button>Add New Property</button></Link>
         </div>
     )
 }

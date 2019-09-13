@@ -10,16 +10,15 @@ class Dashboard extends Component{
             houses: []
         }
     }
-    updateState = (value) => {
-        this.setState({houses: value})
-    }
-    componentDidMount(){
+    updateState = () => {
         Axios.get('/api/houses') 
         .then(response => {
-           this.updateState(response.data);
-            console.log(this.state.houses);
+            this.setState({houses: response.data})
         })
         .catch(err => console.log(err));
+    }
+    componentDidMount(){
+        this.updateState();
     }
     render(){
         let houses = this.state.houses.map((el) =>(

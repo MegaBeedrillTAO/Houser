@@ -6,9 +6,9 @@ class House extends Component{
     deleteHouse = () =>{
         const {id} = this.props;
         Axios.delete(`/api/houses/${id}`)
-        // .then(response => {
-        //     this.props.updateState(response.data);
-        // })
+        .then(response => {
+            this.props.updateState(response.data);
+        })
     }
 
     render(){

@@ -8,7 +8,7 @@ async function addHouse(req,res){
     return res.status(200).send(house);
 }
 async function deleteHouse(req, res){
-    const {id} = req.body;
+    const {id} = req.params;
     await req.app.get('db').deleteHouse(id);
     return res.sendStatus(200);
 }
