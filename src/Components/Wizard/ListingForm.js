@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class ListingForm extends Component{
 
@@ -9,7 +11,7 @@ class ListingForm extends Component{
             city: '',
             address: '',
             state: '',
-            zipcode: 0
+            zip: 0
         }
     }
     handleName = (e) =>{
@@ -24,8 +26,18 @@ class ListingForm extends Component{
     handleState = (e) =>{
         this.setState({state: e.target.value});    
     }
-    handleZipcode = (e) =>{
-        this.setState({zipcode: e.target.value});    
+    handleZip = (e) =>{
+        this.setState({zip: e.target.value});    
+    }
+    addHouse = () =>{
+        const {name, address, city, state, zip} = this.state;
+        Axios.post('/api/houses', {
+            name,
+            address,
+            city,
+            state,
+            zip
+        })
     }
     render(){
         return(
@@ -49,11 +61,11 @@ class ListingForm extends Component{
                     </main>
                     <main>
                         <h5>Zipcode</h5>
-                        <input type='number' onChange={this.handleZipcode}/>
+                        <input type='number' onChange={this.handleZip}/>
                     </main>
                 </section>
 
-                <button>Complete</button>
+                <Link to ='/'><button onClick={this.addHouse}>Complete</button></Link>
             </div>
         )
     }

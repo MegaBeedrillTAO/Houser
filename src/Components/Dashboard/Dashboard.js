@@ -10,10 +10,14 @@ class Dashboard extends Component{
             houses: []
         }
     }
+    updateState = (value) => {
+        this.setState({houses: value})
+    }
     componentDidMount(){
         Axios.get('/api/houses') 
         .then(response => {
-            this.setState({houses: response.data})
+           this.updateState(response.data);
+            console.log(this.state.houses);
         })
         .catch(err => console.log(err));
     }
@@ -25,7 +29,9 @@ class Dashboard extends Component{
             address  ={el.address}
             city = {el.city}
             state = {el.state}
-            zipcode = {el.zipcode}
+            zip = {el.zip}
+            id = {el.id}
+            updateState = {this.updateState}
             />
         ))
         return(

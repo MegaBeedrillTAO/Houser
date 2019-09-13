@@ -1,9 +1,18 @@
 import React, {Component} from 'react';
+import Axios from 'axios';
 
 class House extends Component{
+    
+    deleteHouse = () =>{
+        const {id} = this.props;
+        Axios.delete(`/api/houses/${id}`)
+        // .then(response => {
+        //     this.props.updateState(response.data);
+        // })
+    }
 
     render(){
-        const {name, address, city, state, zipcode} = this.props;
+        const {name, address, city, state, zip} = this.props;
         return(
             <div className = 'house-div'>
                 <section>
@@ -11,9 +20,9 @@ class House extends Component{
                     <p>Address: {address}</p>
                     <p>City: {city}</p>
                     <p>State: {state}</p>
-                    <p>Zipcode: {zipcode}</p>
+                    <p>Zipcode: {zip}</p>
                 </section>
-                <button>X</button>
+                <button onClick={this.deleteHouse}>X</button>
             </div> 
         )
     }
