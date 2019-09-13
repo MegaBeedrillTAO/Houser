@@ -12,7 +12,7 @@ class Wizard extends Component{
             <div className='wiz-dash'>
                 <AddNewListing/>
                 <Route path ='/wizard/step1' component={ListingForm}/>
-                <Route path ='wizard/step2'component={ListingImage}/>
+                <Route path ='/wizard/step2'component={ListingImage}/>
                 <Route path ='/wizard/step3' component={ListingRent}/>
             </div>
         )
