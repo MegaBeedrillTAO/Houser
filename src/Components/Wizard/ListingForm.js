@@ -29,7 +29,8 @@ class ListingForm extends Component{
         })
     }
     handleName = (e) =>{
-        this.setState({name: e.target.value});    
+        this.setState({name: e.target.value}); 
+         
     }
     handleAddress = (e) =>{
         this.setState({address: e.target.value});
@@ -88,7 +89,7 @@ class ListingForm extends Component{
 
                 <section className='buttons'>
                    
-                   <Link to='/wizard/step2'><button>Next</button></Link> 
+                   <Link to='/wizard/step2'><button onClick={this.updateStore}>Next</button></Link> 
                 </section>
             </div>
         )
